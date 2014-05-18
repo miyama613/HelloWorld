@@ -1,0 +1,127 @@
+﻿2014/05/19 午前1時3分
+
+目標：
+・AngularJSチュートリアルの環境作成
+・ちょっとはやる
+
+http://qiita.com/advent-calendar/2013/angularjs-startup
+
+【1日目】
+読んだ
+これ、意味あんのかわかんない
+
+【2日目】
+環境のインストールとか
+
+<SourceTree for Windowsインストール>
+
+http://codezine.jp/article/detail/7400
+
+ダウンロード
+・SourceTree for Windows
+
+（多分操作が他と同じっぽいTortoiseGitのがいいんだけどなぁ。）
+→インストーラ起動したらエラー出たのでやめた。
+
+<Node.jsインストール>
+↓インストーラでインストールがうまくいかないらしい
+http://qiita.com/matsuzan/items/1fc80083496951e0406f
+
+ので、コメントのとこにある「chocolatey」なるものを使ってインストール
+
+> chocolateyのインストール
+http://news.mynavi.jp/articles/2013/08/01/chocolately/001.html
+
+↑ユーザスクリプトの実行で権限エラーになるので↓参考
+http://technet.microsoft.com/ja-jp/scriptcenter/powershell_owner05.aspx
+「Windows PowerShell からスクリプトを実行する」
+（この文章をMSの人が書いてると思うとじわじわくる）
+
+
+>コマンドプロンプトで
+>chocolateyインストール
+>
+>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin
+>
+>を実行して
+>Node.jsインストール
+>
+>cinst nodejs.install
+>
+>でOKです。
+
+<TortoiseGitのインストール>
+SourceTreeが失敗したので。
+
+http://www.kkaneko.com/rinkou/redmine/tortoisegit.html
+
+>git --version
+↑gitは内部コマンド～認識されていません
+（Gitインストールしてないしなぁ）
+
+<Gitインストール>
+http://git-scm.com/book/ja/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+
+こっちのほうが情報多い～（Gitインストール～TortoiseGit～pushまで）
+http://www.karakaram.com/git-install
+
+>C:\Users\nao>git --version
+>git version 1.9.2.msysgit.0
+
+パス通った～
+
+・・おお、こっちのはTortoiseGitのSSHクライアントがopensshになってる。まあどうにかなるか。ダメだったらインストールし直しだ。
+
+<githubアカウント取得とか>
+http://wp.yat-net.com/?p=3874
+
+>GitHubは無料で利用出来るプランも用意されています。容量に応じて金額が変わってきますが、プロジェクトを非公開で管理する場合は無料プランは選択出来ません。
+
+（まじか。てか垢取得については一行かよ。）
+user：miyama613
+pw：viva
+
+tortoiseGitの使い方
+http://tracpath.com/bootcamp/learning_tortoisegit.html
+http://d.hatena.ne.jp/PoohKid/20101012/1286902223
+
+GitHubに反映されるには「コミット＋プッシュ」が必要。
+あー、ShiftJISはだめかー。
+UTF8に変更して再度コミット＆プッシュで文字化けしないことを確認
+
+
+----
+
+http://d.hatena.ne.jp/digo/20130521
+http://qiita.com/seltzer/items/8490aa76f33e31c08e10
+
+<チュートリアル>
+https://docs.angularjs.org/tutorial/step_00
+
+<step-0>
+git checkout -f step-0
+npm start
+
+ちょっとサーバ起動が変わったらしい
+
+http://localhost:8000/app/index.html
+
+
+やっとカレンダーに追いついた。てか、初心者にやさしくないカレンダーだな。
+digoさんのがわかりやすい。
+「実験」を追記してF5したら普通に式が追加されてた。
+
+（step-0まとめ）
+まずはサンプルを使ってAngularJSを動かしてみよう。
+
+
+<Step-1,2>
+
+controllers.js と　testを試した
+
+
+<Step-3>
+end-to-endテストおそい
+
+
+
